@@ -34,8 +34,9 @@ if st.button("ダイエットメニューを考案する！"):
         st.warning("食材を1つ以上選んでください！")
     else:
         with st.spinner("AI栄養士がレシピと栄養素を計算中..."):
-           client = genai.Client(api_key=api_key, http_options={'api_version': 'v1beta'})
-　　　　　　prompt = f"""
+         client = genai.Client(api_key=api_key, http_options={'api_version': 'v1beta'})
+
+         prompt = f"""
             あなたはプロの栄養士です。以下の食材と条件でダイエットレシピを1つ考案してください。
 
             【使う食材】{', '.join(all_foods)}
